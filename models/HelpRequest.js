@@ -1,15 +1,18 @@
-Hackers = new Mongo.Collection('hackers');
+HelpRequests = new Mongo.Collection('help_requests');
 
-Hackers.attachSchema(
+HelpRequests.attachSchema(
   new SimpleSchema({
-    name: {
-      type: String
+    reqBy: {
+      type: Meteor.ObjectID
     },
     subject: {
       type: String
     },
     location: {
       type: String
+    },
+    assignedTo: {
+      type: Meteor.ObjectID
     },
     helped: {
       type: Boolean,
@@ -26,7 +29,7 @@ Hackers.attachSchema(
 // Collection2 already does schema checking
 // Add custom permission rules if needed
 if (Meteor.isServer) {
-  Hackers.allow({
+  HelpRequests.allow({
     insert: function() {
       return true;
     },

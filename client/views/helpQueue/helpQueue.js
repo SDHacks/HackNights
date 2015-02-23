@@ -3,7 +3,7 @@ Meteor.subscribe('mentors');
 
 Template['helpQueue'].helpers({
   hackers: function() {
-    return Hackers.find();
+    return HelpRequests.find();
   },
   mentors: function() {
     return Mentors.find();
@@ -21,7 +21,7 @@ Template['helpQueue'].events({
     };
 
     // Insert hacker into queue
-    Hackers.insert(fields, function() {
+    HelpRequests.insert(fields, function() {
       Flash.success('<strong>Your request for help has been received!</strong>');
     });
   }
