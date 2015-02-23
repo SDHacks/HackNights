@@ -16,10 +16,10 @@ fastclick
 zimme:iron-router-active
 manuelschoebel:ms-seo
 browser-policy
-useraccounts:semantic-ui
 natestrauser:animate-css
 dburles:collection-helpers
 meteorhacks:fast-render
 
-nooitaf:semantic-ui
 fourseven:scss@=0.9.6
+reywood:bootstrap3-sass
+useraccounts:bootstrap
