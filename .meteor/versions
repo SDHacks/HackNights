@@ -82,7 +82,6 @@ underscore@1.0.2
 url@1.0.3
 useraccounts:bootstrap@1.4.1
 useraccounts:core@1.4.1
-useraccounts:semantic-ui@1.4.1
 webapp@1.1.6
 webapp-hashing@1.0.2
 wizonesolutions:underscore-string@1.0.0
