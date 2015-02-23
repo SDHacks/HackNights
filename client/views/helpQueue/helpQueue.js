@@ -1,13 +1,12 @@
+Meteor.subscribe('hackers');
+Meteor.subscribe('mentors');
+
 Template['helpQueue'].helpers({
   'hackers' : function() {
-    return [
-      {'name': 'John Doe', 'subject': 'Web Development', 'location': 'CSE 1202'}
-    ]
+    return Hackers.find();
   },
   'mentors' : function() {
-    return [
-      {'name': 'John Doe', 'subject': 'Web Development'}
-    ]
+    return Mentors.find();
   }
 });
 

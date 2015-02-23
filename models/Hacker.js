@@ -1,6 +1,6 @@
-Hacker = new Mongo.Collection('Hacker');
+Hackers = new Mongo.Collection('hackers');
 
-Hacker.attachSchema(
+Hackers.attachSchema(
   new SimpleSchema({
     name: {
       type: String
@@ -13,7 +13,7 @@ Hacker.attachSchema(
     },
     helped: {
       type: Boolean,
-      default: false
+      autoValue: function() { return false; }
     },
     createdAt: {
       type: Date,
@@ -25,7 +25,7 @@ Hacker.attachSchema(
 // Collection2 already does schema checking
 // Add custom permission rules if needed
 if (Meteor.isServer) {
-  Hacker.allow({
+  Hackers.allow({
     insert: function() {
       return true;
     },

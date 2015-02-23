@@ -1,6 +1,6 @@
-Mentor = new Mongo.Collection('Mentor');
+Mentors = new Mongo.Collection('mentors');
 
-Mentor.attachSchema(
+Mentors.attachSchema(
     new SimpleSchema({
     name: {
       type: String
@@ -18,7 +18,7 @@ Mentor.attachSchema(
 // Collection2 already does schema checking
 // Add custom permission rules if needed
 if (Meteor.isServer) {
-  Mentor.allow({
+  Mentors.allow({
     insert : function () {
       return true;
     },
