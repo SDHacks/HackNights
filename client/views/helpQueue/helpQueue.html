@@ -10,6 +10,35 @@
   </p>
 
   <div class="row">
+    <div class="col-xs-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="title">Ask for help</h4>
+        </div>
+        <div class="panel-body">
+          {{flash}}
+          <form id="addHackerForm" class="form-inline">
+            <div class="form-group">
+              <label for="hackerName">Name</label>
+              <input class="form-control" name="name" id="hackerName" type="text"/>
+            </div>
+            <div class="form-group">
+              <label for="hackerSubject">Subject</label>
+              <input class="form-control" name="subject" id="hackerSubject" type="text"/>
+            </div>
+            <div class="form-group">
+              <label for="hackerLocation">Location</label>
+              <input class="form-control" name="location" id="hackerLocation" type="text"/>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Request a mentor</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
     <!-- Hackers -->
     <div class="col-sm-6">
       <div class="panel panel-default">
@@ -35,10 +64,6 @@
             {{/each}}
             </tbody>
           </table>
-
-          <button id="addHackeeButton" class="btn btn-primary btn-lg btn-block">
-            <i class="fa fa-plus fa-w"></i> Add Hacker
-          </button>
         </div>
       </div>
     </div>
