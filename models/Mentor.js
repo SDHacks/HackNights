@@ -10,7 +10,8 @@ Mentors.attachSchema(
     },
     createdAt: {
       type: Date,
-      denyUpdate: true
+      denyUpdate: true,
+      autoValue: function() { return new Date(); }
     }
   })
 );
