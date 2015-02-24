@@ -3,7 +3,9 @@ HelpRequests = new Mongo.Collection('help_requests');
 HelpRequests.attachSchema(
   new SimpleSchema({
     reqBy: {
-      type: Meteor.ObjectID
+      type: String,
+      autoValue: function() { if (this.isInsert) return Meteor.userId(); },
+      denyUpdate: true
     },
     subject: {
       type: String
@@ -12,7 +14,8 @@ HelpRequests.attachSchema(
       type: String
     },
     assignedTo: {
-      type: Meteor.ObjectID
+      type: String,
+      optional: true
     },
     helped: {
       type: Boolean,
