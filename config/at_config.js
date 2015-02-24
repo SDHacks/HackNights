@@ -1,4 +1,12 @@
 AccountsTemplates.addField({
+  _id: 'username',
+  type: 'text',
+  required: true,
+  displayName: "Username",
+  placeholder: "Username"
+});
+
+AccountsTemplates.addField({
   _id: 'firstName',
   type: 'text',
   displayName: "First Name",
