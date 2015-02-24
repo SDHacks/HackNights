@@ -1,17 +1,30 @@
 Mentors = new Mongo.Collection('mentors');
 
 Mentors.attachSchema(
-    new SimpleSchema({
-    name: {
+  new SimpleSchema({
+    userId: {
       type: String
     },
-    subject: {
-      type: String
+    subjects: {
+      type: [String],
+      label: "Subjects"
+    },
+    approved: {
+      type: Boolean
+    },
+    status: {
+      type: String,
+      allowedValues: ['Offline', 'Available', 'Occupied'],
+      autoValue: function() {
+        if (this.isInsert) return 'Offline';
+      }
     },
     createdAt: {
       type: Date,
       denyUpdate: true,
-      autoValue: function() { return new Date(); }
+      autoValue: function() {
+        if (this.isInsert) return new Date();
+      }
     }
   })
 );
@@ -20,13 +33,13 @@ Mentors.attachSchema(
 // Add custom permission rules if needed
 if (Meteor.isServer) {
   Mentors.allow({
-    insert : function () {
+    insert: function() {
       return true;
     },
-    update : function () {
+    update: function() {
       return true;
     },
-    remove : function () {
+    remove: function() {
       return true;
     }
   });
