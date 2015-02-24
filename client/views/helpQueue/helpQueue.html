@@ -16,12 +16,8 @@
           <h4 class="title">Ask for help</h4>
         </div>
         <div class="panel-body">
-          {{flash}}
+            {{flash}}
           <form id="addHackerForm" class="form-inline">
-            <div class="form-group">
-              <label for="hackerName">Name</label>
-              <input class="form-control" name="name" id="hackerName" type="text"/>
-            </div>
             <div class="form-group">
               <label for="hackerSubject">Subject</label>
               <input class="form-control" name="subject" id="hackerSubject" type="text"/>
@@ -39,11 +35,11 @@
   </div>
 
   <div class="row">
-    <!-- Hackers -->
+    <!-- Queue -->
     <div class="col-sm-6">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="title">Hackers</h3>
+          <h3 class="title">Help Requests</h3>
         </div>
         <div class="panel-body">
           <table class="table table-striped table-condensed">
@@ -55,7 +51,7 @@
             </tr>
             </thead>
             <tbody>
-            {{# each hackers}}
+            {{#each helpRequests}}
               <tr>
                 <td>{{name}}</td>
                 <td>{{subject}}</td>
@@ -83,7 +79,7 @@
             </tr>
             </thead>
             <tbody>
-            {{# each mentors}}
+            {{#each mentors}}
               <tr>
                 <td>{{name}}</td>
                 <td>{{subject}}</td>
