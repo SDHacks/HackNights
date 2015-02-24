@@ -5,7 +5,7 @@ Template['helpQueue'].helpers({
   helpRequests: function() {
     return HelpRequests.find();
   },
-  requester: function() {
+  name: function() {
     var user = Meteor.users.findOne(this.reqBy);
     return user.profile.firstName + ' ' + user.profile.lastName;
   },
