@@ -25,7 +25,14 @@
                 <td>{{location}}</td>
                 <td>
                     {{#unless assignedTo}}
-                      <button data-id="{{_id}}" class="btn btn-success help-btn">Help</button>
+                      <button data-id="{{_id}}" class="btn btn-default help-btn">Help</button>
+                    {{else}}
+                      <button data-id="{{_id}}" class="btn btn-danger cancel-btn">
+                        <i class="fa fa-times"></i> Cancel
+                      </button>
+                      <button data-id="{{_id}}" class="btn btn-success complete-btn">
+                        <i class="fa fa-check"></i> Complete
+                      </button>
                     {{/unless}}
                 </td>
               </tr>

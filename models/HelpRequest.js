@@ -19,7 +19,7 @@ HelpRequests.attachSchema(
     },
     helped: {
       type: Boolean,
-      autoValue: function() { return false; }
+      autoValue: function() { if (this.isInsert) return false; }
     },
     createdAt: {
       type: Date,
