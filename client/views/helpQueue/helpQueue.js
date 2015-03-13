@@ -3,7 +3,7 @@ Meteor.subscribe('mentors');
 
 Template['helpQueue'].helpers({
   helpRequests: function() {
-    return HelpRequests.find();
+    return HelpRequests.find({helped: false});
   },
   name: function() {
     var user = Meteor.users.findOne(this.reqBy);
