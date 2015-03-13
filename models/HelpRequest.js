@@ -24,7 +24,7 @@ HelpRequests.attachSchema(
     createdAt: {
       type: Date,
       denyUpdate: true,
-      autoValue: function() { return new Date(); }
+      autoValue: function() { if (this.isInsert) return new Date(); }
     }
   })
 );
