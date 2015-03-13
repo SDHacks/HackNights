@@ -1,0 +1,39 @@
+<template name="mentorPanel">
+  <h1 class="page-header">Mentor Panel</h1>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="title">Help Requests</h3>
+        </div>
+        <div class="panel-body">
+          <table class="table table-striped table-condensed">
+            <thead>
+            <tr>
+              <th>Name</th>
+              <th>Subject</th>
+              <th>Location</th>
+              <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each helpRequests}}
+              <tr>
+                <td>{{name}}</td>
+                <td>{{subject}}</td>
+                <td>{{location}}</td>
+                <td>
+                    {{#unless assignedTo}}
+                      <button data-id="{{_id}}" class="btn btn-success help-btn">Help</button>
+                    {{/unless}}
+                </td>
+              </tr>
+            {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
